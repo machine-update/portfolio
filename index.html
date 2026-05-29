@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papa Abou MBAYE - Portfolio</title>
+    <meta name="description" content="Portfolio de Papa Abou MBAYE — Étudiant en BUT Informatique passionné par l’intelligence artificielle, les systèmes intelligents et leurs applications dans le domaine de l’aéronautique. Intéressé par le développement logiciel, les systèmes embarqués, l’analyse de données, l’automatisation et les technologies innovantes avec Python et Java.">
+
+    <link rel="icon" type="image/png" href="img/photo.jpg" class="w-20 h-auto">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Refonte complète de la palette : le marron est remplacé par un noir/zinc élégant
+                        primary: {
+                            50: '#f9fafb',   // gray-50
+                            100: '#f3f4f6',  // gray-100
+                            200: '#e5e7eb',  // gray-200
+                            300: '#d1d5db',  // gray-300
+                            400: '#9ca3af',  // gray-400
+                            500: '#6b7280',  // gray-500
+                            600: '#27272a',  // zinc-800
+                            700: '#18181b',  // zinc-900
+                            800: '#09090b',  // zinc-950
+                            900: '#000000'   // black
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Poppins', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-in-left': 'slideInLeft 0.6s ease-out',
+                        'slide-in-right': 'slideInRight 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'scroll': 'scroll 40s linear infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 font-sans">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#accueil" class="flex items-center space-x-2 group">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 border border-gray-200">
+                            <img src="./img/photo.jpg" class="w-8 h-8 object-contain rounded-sm"/>
+                        </div>
+                        <span class="font-display font-semibold text-gray-900 hidden sm:block">Papa Abou MBAYE</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#accueil" class="nav-link text-gray-700 hover:text-black px-3 py-2 text-sm font-medium">Accueil</a>
+                        <a href="#competences" class="nav-link text-gray-700 hover:text-black px-3 py-2 text-sm font-medium">Compétences</a>
+                        <a href="#projets" class="nav-link text-gray-700 hover:text-black px-3 py-2 text-sm font-medium">Projets</a>
+                        <a href="#apropos" class="nav-link text-gray-700 hover:text-black px-3 py-2 text-sm font-medium">À propos</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-black px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="./assets/cv_PapaAbouMBAYE_polytechSorbonne.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-black to-zinc-900 text-white font-semibold rounded-full hover:from-zinc-950 hover:to-zinc-850 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Voir mon CV</span>
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-btn text-gray-700 hover:text-black focus:outline-none focus:text-black transition-colors duration-200" aria-label="Menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mobile-menu md:hidden fixed top-16 right-0 w-64 h-screen bg-white/70 shadow-xl border-l border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#accueil" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-md transition-colors duration-200">Accueil</a>
+                <a href="#competences" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-md transition-colors duration-200">Compétences</a>
+                <a href="#projets" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-md transition-colors duration-200">Projets</a>
+                <a href="#apropos" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-md transition-colors duration-200">À propos</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-md transition-colors duration-200">Contact</a>
+                <a href="./assets/cv_PapaAbouMBAYE_polytechSorbonne.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 mx-3 mt-4 bg-gradient-to-r from-black to-zinc-900 text-white font-semibold rounded-full hover:from-zinc-950 hover:to-zinc-850 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Voir mon CV</span>
+                    <i class="fas fa-external-link-alt text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="accueil" class="hero-bg min-h-screen flex items-center justify-center relative bg-gradient-to-b from-zinc-950 to-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left animate-slide-in-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
+                        Bonjour, je suis<br>
+                        <span class="text-zinc-300">Papa Abou MBAYE</span>
+                    </h1>
+                    <p class="text-xl text-zinc-300 mb-8 leading-relaxed max-w-2xl">
+                        Étudiant en BUT 2 Informatique à l'IUT de Villetaneuse, passionné par l’intelligence artificielle, les systèmes intelligents et leurs applications dans l’aéronautique.  
+Découvrez mon parcours, mes compétences techniques et les projets que j’ai réalisés jusqu’à aujourd’hui.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#projets" class="inline-flex items-center px-8 py-3 bg-white text-zinc-950 font-semibold rounded-full hover:bg-zinc-100 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                            <span>Voir mes projets</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-zinc-950 transform hover:scale-105 transition-all duration-300">
+                            <span>Me contacter</span>
+                            <i class="fas fa-envelope ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center lg:justify-end animate-slide-in-right">
+                    <div class="relative">
+                        <div class="w-80 h-80 rounded-full bg-gradient-to-br from-zinc-700 to-black p-2 animate-pulse-slow">
+                            <div class="w-full h-full rounded-full bg-white p-4 flex items-center justify-center">
+                                <img src="img/photo.jpg" alt="Papa Abou MBAYE" class="w-full h-full rounded-full object-cover animate-float">
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center animate-float" style="animation-delay: 0.5s;">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center animate-float" style="animation-delay: 1s;">
+                            <i class="fas fa-laptop text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#competences" class="text-white hover:text-zinc-300 transition-colors duration-300">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="competences" class="section-padding bg-gradient-to-br from-zinc-50 to-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl font-display font-bold text-zinc-950 mb-4">Mes Compétences</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Découvrez les technologies et langages que je maîtrise !
+                </p>
+            </div>
+            
+            <div class="scroller animate-fade-in" style="animation-delay: 0.3s;">
+                <div class="scroller__inner flex gap-6 py-4">
+                    <!-- Les badges ont maintenant un fond gris clair avec texte noir par défaut, et passent en noir au survol -->
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fab fa-linux mr-2"></i>Linux
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fab fa-python mr-2"></i>Python
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fab fa-java mr-2"></i>Java
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fab fa-microchip mr-2"></i>Risc-V
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fab fa-js-square mr-2"></i>JavaScript
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fab fa-html5 mr-2"></i>HTML5
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fab fa-css3-alt mr-2"></i>CSS3
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fas fa-database mr-2"></i>SQL
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fab fa-git-alt mr-2"></i>Git
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fab fa-github mr-2"></i>GitHub
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fas fa-terminal mr-2"></i>Bash
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fas fa-palette mr-2"></i>Canva
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fas fa-language mr-2"></i>Français
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fas fa-language mr-2"></i>Anglais
+                    </div>
+                    <div class="skill-tag bg-zinc-100 text-zinc-900 border border-zinc-200 hover:bg-zinc-900 hover:text-white px-6 py-3 rounded-full font-medium whitespace-nowrap shadow-sm transition-all duration-300">
+                        <i class="fas fa-language mr-2"></i>Espagnol
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projets" class="section-padding bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">Mes Projets Universitaires</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-4">
+                    Découvrez les projets auxquels j'ai contribué durant mon parcours académique
+                </p>
+                <p class="text-gray-500">
+                    Pour voir mes projets personnels, c'est 
+                    <a href="#apropos" class="text-zinc-900 hover:text-black font-semibold underline">ici</a> !
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 animate-slide-up">
+                    <div class="aspect-video bg-gradient-to-br from-zinc-900 to-black flex items-center justify-center">
+                        <i class="fas fa-chess text-6xl text-white"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-bold text-gray-900 mb-4">Jeu d'Échecs</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Projet réalisé en binôme consistant à développer un jeu d'échecs en Java. 
+                            Ce projet m'a permis d'approfondir mes connaissances en programmation orientée objet 
+                            et en logique de jeu.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Java</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">POO</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Modélisation</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">UML</span>
+                        </div>
+                        <a href="echecs.html" class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 text-white font-semibold rounded-lg hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg group">
+                            <span>Voir le projet</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="aspect-video bg-gradient-to-br from-zinc-900 to-black flex items-center justify-center">
+                        <i class="fas fa-globe text-6xl text-white"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-bold text-gray-900 mb-4">Site Web Événementiel</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Site web réalisé en équipe pour un événement. Ce projet m'a permis de développer 
+                            mes compétences en travail collaboratif et en développement web.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">HTML/CSS</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">JavaScript</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Travail d'équipe</span>
+                        </div>
+                        <a href="projet2.html" class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 text-white font-semibold rounded-lg hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg group">
+                            <span>Voir le projet</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 animate-slide-up">
+                    <div class="aspect-video bg-gradient-to-br from-zinc-900 to-black flex items-center justify-center">
+                        <i class="fas fa-database text-6xl text-white"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-bold text-gray-900 mb-4">Conception et Création de Base de Données</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Conception d'une base de données, modélisation conceptuelle grâce au modèle entité-association, normalisation des données, implémentation en SQL des données.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">MEA</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">SQL</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Peuplement</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Modélisation</span>
+                        </div>
+                        <a href="projet3.html" class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 text-white font-semibold rounded-lg hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg group">
+                            <span>Voir le projet</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 animate-slide-up">
+                    <div class="aspect-video bg-gradient-to-br from-zinc-900 to-black flex items-center justify-center">
+                        <i class="fas fa-desktop text-6xl text-white"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-bold text-gray-900 mb-4">Installation Poste et Services Réseau</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Configuration d'un environnement de développement et déploiement d'une infrastructure réseau sur un ordinateur portable utilisant Linux. 
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Réseaux</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Bash</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Apache</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Linux</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Administration</span>
+                        </div>
+                        <a href="projet4.html" class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 text-white font-semibold rounded-lg hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg group">
+                            <span>Voir le projet</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 animate-slide-up">
+                    <div class="aspect-video bg-gradient-to-br from-zinc-900 to-black flex items-center justify-center">
+                        <i class="fas fa-clipboard-question text-6xl text-white"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-bold text-gray-900 mb-4">Enquête de satisfaction</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Enquête de satisfaction réalisée auprès du personnel et des étudiants présents dans l'IUT informatique de la Sorbonne Paris Nord dans le but d'améliorer la vie au sein de L'IUT. 
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Rédaction</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Questionnaire</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Analyse de statistiques</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Travail en groupe</span>
+                        </div>
+                        <a href="projet5.html" class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 text-white font-semibold rounded-lg hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg group">
+                            <span>Voir le projet</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 animate-slide-up">
+                    <div class="aspect-video bg-gradient-to-br from-zinc-900 to-black flex items-center justify-center">
+                        <i class="fas fa-database text-6xl text-white"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-bold text-gray-900 mb-4">Peuplement Automatique d'une base de données</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Création d'un script en python de création et peuplement automatique à partir d'un fichier Excel, d'une base de données.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">SQL</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Python</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">MEA</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Pandas</span>
+                            <span class="px-3 py-1 bg-zinc-100 text-zinc-900 rounded-full text-sm font-medium">Automatisation</span>
+                        </div>
+                        <a href="projet6.html" class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 text-white font-semibold rounded-lg hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg group">
+                            <span>Voir le projet</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apropos" class="section-padding bg-gradient-to-br from-gray-50 to-zinc-100 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl font-display font-bold text-zinc-950 mb-4">À Propos de Moi</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Découvrez mon parcours et mes projets personnels
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in-left">
+                    <h3 class="text-3xl font-display font-bold text-gray-900 mb-6">Mon Parcours</h3>
+                    <div class="prose prose-lg text-gray-600 leading-relaxed">
+                        <p class="mb-6">
+                            Actuellement en BUT Informatique, mon parcours est guidé par une double passion : le développement logiciel et l'électronique embarquée. Mon entrée dans le supérieur par le concours de l'École Supérieure Polytechnique de Dakar m'a donné des bases solides en mathématiques, en logique combinatoire et en simulation de circuits (NI Multisim).
+
+                            J'ai ensuite enrichi ce profil technique avec le BUT, en me spécialisant dans le développement backend, l'architecture logicielle, les réseaux, et en consolidant mon expertise sur le terrain grâce à des expériences concrètes en développement Fullstack.
+                            
+                            Mon objectif ? Fusionner ces deux mondes. Je vise l'ingénierie des systèmes numériques et embarqués, avec l'ambition de concevoir des systèmes fiables et critiques pour des secteurs exigeants comme l'aéronautique (Airbus) ou l'exploration spatiale (ESA, NASA).
+                        </p>
+                    </div>
+                    <a href="Qui_suis-je.html" class="inline-flex items-center px-6 py-3 bg-zinc-900 text-white font-semibold rounded-lg hover:bg-black transform hover:scale-105 transition-all duration-300 shadow-md">
+                        <span>En savoir plus</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="animate-slide-in-right">
+                    <h3 class="text-2xl font-display font-bold text-gray-900 mb-6">Projets Personnels</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                            ```
